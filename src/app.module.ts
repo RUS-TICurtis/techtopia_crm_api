@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -12,8 +14,12 @@ import { AuthModule } from './auth/auth.module';
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => {
-        const dbType = configService.get<string>('DB_TYPE') || 'sqlite';
+
+
+
+      useFactory: (configService: ConfigService): TypeOrmModuleOptions => {
+
+        const dbType = configService.get<string>('DB_TYPE') as 'postgres' | 'sqlite';
         if (dbType === 'postgres') {
           return {
             type: 'postgres',
@@ -27,7 +33,7 @@ import { AuthModule } from './auth/auth.module';
           };
         }
         return {
-          type: 'sqlite',
+          type: 'better-sqlite3',
           database: 'local_dev.sqlite',
           autoLoadEntities: true,
           synchronize: true,
@@ -36,8 +42,9 @@ import { AuthModule } from './auth/auth.module';
       inject: [ConfigService],
     }),
     AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

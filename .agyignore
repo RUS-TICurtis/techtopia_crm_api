@@ -1,0 +1,20 @@
+# Dependency Trees (Token Killers!)
+node_modules/
+.dart_tool/
+.pub-cache/
+build/
+
+# IDE & App state caches
+.antigravity/
+.agents/history/
+.tmp/
+*.log
+Jules/
+.vscode/
+
+
+
+# Heavy Media Assets / Data backups
+assets/large-datasets/
+*.mp4
+*.sql
