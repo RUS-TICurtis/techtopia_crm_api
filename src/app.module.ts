@@ -6,6 +6,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { FinanceModule } from './finance/finance.module';
+import { CrmModule } from './crm/crm.module';
+import { ProjectsModule } from './projects/projects.module';
+import { SupportModule } from './support/support.module';
+import { HrModule } from './hr/hr.module';
+import { CommunicationsModule } from './communications/communications.module';
+import { AiModule } from './ai/ai.module';
+import { AuditModule } from './audit/audit.module';
+import { AnalyticsModule } from './analytics/analytics.module';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 @Module({
@@ -15,11 +23,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-
-
-
       useFactory: (configService: ConfigService): TypeOrmModuleOptions => {
-
         const dbType = configService.get<string>('DB_TYPE') as 'postgres' | 'sqlite';
         if (dbType === 'postgres') {
           return {
@@ -45,6 +49,14 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
     AuthModule,
     UsersModule,
     FinanceModule,
+    CrmModule,
+    ProjectsModule,
+    SupportModule,
+    HrModule,
+    CommunicationsModule,
+    AiModule,
+    AuditModule,
+    AnalyticsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

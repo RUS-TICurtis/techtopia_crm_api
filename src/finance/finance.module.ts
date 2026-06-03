@@ -85,6 +85,7 @@ import { AIController } from './controllers/ai.controller';
     AIController,
   ],
   exports: [
+    FinanceAuditService,
     InvoicesService,
     PaymentsService,
     SubscriptionsService,

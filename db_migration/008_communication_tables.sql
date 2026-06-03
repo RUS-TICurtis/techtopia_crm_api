@@ -1,0 +1,41 @@
+CREATE TABLE conversations (
+    id SERIAL PRIMARY KEY,
+    tenant_id UUID NOT NULL REFERENCES organizations(tenant_id) ON DELETE CASCADE,
+    name VARCHAR(255),
+    type VARCHAR(50) DEFAULT 'direct', -- direct, group
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE messages (
+    id SERIAL PRIMARY KEY,
+    tenant_id UUID NOT NULL REFERENCES organizations(tenant_id) ON DELETE CASCADE,
+    conversation_id INTEGER NOT NULL REFERENCES conversations(id) ON DELETE CASCADE,
+    sender_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    content TEXT NOT NULL,
+    type VARCHAR(50) DEFAULT 'text',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE notifications (
+    id SERIAL PRIMARY KEY,
+    tenant_id UUID NOT NULL REFERENCES organizations(tenant_id) ON DELETE CASCADE,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    type VARCHAR(100),
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tickets (
+    id SERIAL PRIMARY KEY,
+    tenant_id UUID NOT NULL REFERENCES organizations(tenant_id) ON DELETE CASCADE,
+    subject VARCHAR(255) NOT NULL,
+    client VARCHAR(255) NOT NULL,
+    priority VARCHAR(50) DEFAULT 'Medium',
+    status VARCHAR(50) DEFAULT 'Open',
+    message TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

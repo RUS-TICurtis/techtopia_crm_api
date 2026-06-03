@@ -1,0 +1,12 @@
+CREATE TYPE lead_status_enum AS ENUM ('New', 'Contacted', 'Qualified', 'Unqualified');
+CREATE TYPE opportunity_stage_enum AS ENUM ('Qualification', 'Proposal', 'Negotiation', 'Closed Won', 'Closed Lost');
+CREATE TYPE project_status_enum AS ENUM ('Not Started', 'In Progress', 'On Hold', 'Completed', 'Cancelled');
+CREATE TYPE task_priority_enum AS ENUM ('Low', 'Medium', 'High', 'Critical');
+CREATE TYPE task_status_enum AS ENUM ('Todo', 'In Progress', 'In Review', 'Done');
+CREATE TYPE ticket_status_enum AS ENUM ('Open', 'In Progress', 'Resolved', 'Closed');
+CREATE TYPE ticket_priority_enum AS ENUM ('Low', 'Normal', 'High', 'Urgent');
+CREATE TYPE leave_status_enum AS ENUM ('Pending', 'Approved', 'Rejected', 'Cancelled');
+CREATE TYPE invoice_status_enum AS ENUM ('Draft', 'Pending Approval', 'Approved', 'Sent', 'Viewed', 'Partially Paid', 'Paid', 'Overdue', 'Cancelled');
+CREATE TYPE payment_status_enum AS ENUM ('pending', 'completed', 'failed', 'refunded');
+CREATE TYPE po_status_enum AS ENUM ('Draft', 'Submitted', 'Approved', 'Completed', 'Rejected');
+CREATE TYPE subscription_status_enum AS ENUM ('active', 'suspended', 'cancelled');
