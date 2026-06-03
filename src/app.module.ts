@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { FinanceModule } from './finance/finance.module';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 @Module({
@@ -23,11 +24,11 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
         if (dbType === 'postgres') {
           return {
             type: 'postgres',
-            host: configService.get<string>('DB_HOST') || 'localhost',
+            host: configService.get<string>('DB_HOST') || 'postgresql-curtispapa.alwaysdata.net',
             port: configService.get<number>('DB_PORT') || 5432,
-            username: configService.get<string>('DB_USER') || 'crm_user',
-            password: configService.get<string>('DB_PASSWORD') || 'crm_password',
-            database: configService.get<string>('DB_NAME') || 'techtopia_crm',
+            username: configService.get<string>('DB_USER') || 'curtispapa',
+            password: configService.get<string>('DB_PASSWORD') || '!b8Tkx4Zs2_wF!H',
+            database: configService.get<string>('DB_NAME') || 'curtispapa_crm',
             autoLoadEntities: true,
             synchronize: true, // DEV ONLY
           };
@@ -43,6 +44,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
     }),
     AuthModule,
     UsersModule,
+    FinanceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
