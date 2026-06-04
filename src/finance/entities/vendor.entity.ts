@@ -23,7 +23,7 @@ export class Vendor {
   @Column({ nullable: true })
   category: string;
 
-  @Column({ type: 'varchar', default: 'tenant_techtopia' })
+  @Column({ type: 'varchar', default: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11' })
   tenantId: string;
 
   @CreateDateColumn()
@@ -65,7 +65,7 @@ export class PurchaseOrder {
   @Column({ type: 'varchar', nullable: true })
   deliveryDate: string | null;
 
-  @Column({ type: 'varchar', default: 'tenant_techtopia' })
+  @Column({ type: 'varchar', default: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11' })
   tenantId: string;
 
   @CreateDateColumn()

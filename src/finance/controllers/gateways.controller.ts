@@ -10,25 +10,25 @@ export class GatewaysController {
 
   @Post('hubtel/initiate')
   async initHubtelPayment(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.paymentsService.initiateHubtel(data, tenantId);
   }
 
   @Get('hubtel/verify/:reference')
   async verifyHubtelPayment(@Param('reference') reference: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.paymentsService.verifyHubtel(reference, tenantId);
   }
 
   @Post('paystack/initiate')
   async initPaystackPayment(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.paymentsService.initiatePaystack(data, tenantId);
   }
 
   @Get('paystack/verify/:reference')
   async verifyPaystackPayment(@Param('reference') reference: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.paymentsService.verifyPaystack(reference, tenantId);
   }
 }

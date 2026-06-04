@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Company, Contact, Lead, Pipeline, PipelineStage, Opportunity, Quote, Contract } from './entities/crm.entity';
 import { CrmService } from './crm.service';
 import { CrmController } from './crm.controller';
+import { ContractsController } from './contracts.controller';
 import { FinanceModule } from '../finance/finance.module';
 
 @Module({
@@ -20,7 +21,7 @@ import { FinanceModule } from '../finance/finance.module';
     FinanceModule,
   ],
   providers: [CrmService],
-  controllers: [CrmController],
+  controllers: [CrmController, ContractsController],
   exports: [CrmService],
 })
 export class CrmModule {}

@@ -56,6 +56,7 @@ export class ProjectsService {
     const { memberIds, ...projectData } = data;
     const project = this.projectRepository.create({
       ...projectData,
+      name: projectData.name || projectData.title,
       tenantId,
     }) as unknown as Project;
 
@@ -74,6 +75,9 @@ export class ProjectsService {
     const oldSnapshot = JSON.parse(JSON.stringify(project));
 
     const { memberIds, ...projectData } = data;
+    if (projectData.title) {
+      projectData.name = projectData.title;
+    }
     Object.assign(project, projectData);
 
     if (memberIds) {
@@ -205,5 +209,59 @@ export class ProjectsService {
       },
       order: { createdAt: 'ASC' },
     });
+  }
+
+  async getAllTasks(tenantId: string): Promise<Task[]> {
+    return this.taskRepository.find({
+      where: { tenantId },
+      relations: {
+        project: true,
+        milestone: true,
+      },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  async createTaskGlobal(data: any, tenantId: string, actor: string): Promise<Task> {
+    let project = null;
+    if (data.projectId) {
+      project = await this.projectRepository.findOne({ where: { id: +data.projectId, tenantId } });
+    }
+    if (!project) {
+      project = await this.projectRepository.findOne({ where: { tenantId } });
+    }
+    if (!project) {
+      project = this.projectRepository.create({
+        name: 'General Tasks',
+        description: 'Default project for general CRM tasks',
+        tenantId,
+        status: 'In Progress',
+      }) as unknown as Project;
+      project = await this.projectRepository.save(project) as unknown as Project;
+    }
+
+    const task = this.taskRepository.create({
+      name: data.title || data.name,
+      description: data.description || null,
+      priority: data.priority || 'Medium',
+      status: data.status === 'Completed' || data.status === 'Done' ? 'Done' : 'Todo',
+      dueDate: data.date || data.dueDate || null,
+      contactId: data.contactId || null,
+      contactName: data.contactName || null,
+      project,
+      tenantId,
+    }) as unknown as Task;
+
+    const saved = await this.taskRepository.save(task) as unknown as Task;
+    await this.auditService.log(actor, 'TASK_CREATED', 'Task', saved.id.toString(), null, saved, tenantId);
+    return saved;
+  }
+
+  async deleteTaskGlobal(taskId: number, tenantId: string, actor: string): Promise<void> {
+    const task = await this.taskRepository.findOne({ where: { id: taskId, tenantId } });
+    if (!task) throw new NotFoundException(`Task ${taskId} not found`);
+    const oldSnapshot = JSON.parse(JSON.stringify(task));
+    await this.taskRepository.remove(task);
+    await this.auditService.log(actor, 'TASK_DELETED', 'Task', taskId.toString(), oldSnapshot, null, tenantId);
   }
 }

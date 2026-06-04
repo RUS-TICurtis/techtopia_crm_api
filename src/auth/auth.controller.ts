@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Body, Req, UseGuards, UnauthorizedException, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Post, Get, Patch, Body, Req, UseGuards, UnauthorizedException, HttpCode, HttpStatus } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth/jwt-auth.guard';
 import { JwtService } from '@nestjs/jwt';
@@ -82,8 +82,22 @@ export class AuthController {
       department: user.department,
       tenantId: user.tenantId,
       clientCompany: user.clientCompany,
+      phone: user.phone,
+      location: user.location,
+      username: user.username,
+      avatarUrl: user.avatarUrl,
       mfaVerified: userPayload.mfaVerified,
     };
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('profile')
+  async updateProfile(@Req() req: any, @Body() data: any) {
+    const userPayload = req.user;
+    if (!userPayload) {
+      throw new UnauthorizedException('User not authenticated');
+    }
+    return this.authService.updateProfile(userPayload.sub, data);
   }
 
   @Post('logout')

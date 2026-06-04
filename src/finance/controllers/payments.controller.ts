@@ -15,14 +15,14 @@ export class PaymentsController {
     @Query('gateway') gateway?: string,
     @Query('status') status?: string,
   ) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.paymentsService.findAll(tenantId, gateway, status);
   }
 
   @Post('manual')
   @Roles('finance', 'operations')
   async createManualPayment(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.paymentsService.createManual(data, tenantId, actor);
   }
@@ -30,7 +30,7 @@ export class PaymentsController {
   @Post(':id/refund')
   @Roles('finance')
   async refundPayment(@Param('id') id: string, @Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.paymentsService.refund(+id, data, tenantId, actor);
   }
@@ -38,7 +38,7 @@ export class PaymentsController {
   @Post(':id/reconcile')
   @Roles('finance')
   async reconcilePayment(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.paymentsService.reconcile(+id, tenantId, actor);
   }

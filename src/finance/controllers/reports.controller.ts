@@ -10,7 +10,7 @@ export class ReportsController {
 
   @Get('revenue-summary')
   async getRevenueSummary(@Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.reportsService.getReport('revenue', tenantId);
   }
 
@@ -21,7 +21,7 @@ export class ReportsController {
     @Query('start') start?: string,
     @Query('end') end?: string,
   ) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.reportsService.getReport(type, tenantId, start, end);
   }
 
@@ -32,7 +32,7 @@ export class ReportsController {
     @Query('format') format: string,
     @Res() res: any,
   ) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const data = await this.reportsService.getReport(type, tenantId);
     
     if (format === 'csv') {

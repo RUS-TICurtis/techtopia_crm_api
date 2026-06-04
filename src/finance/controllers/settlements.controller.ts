@@ -10,7 +10,7 @@ export class SettlementsController {
 
   @Get()
   async getSettlements(@Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.reportsService.getSettlements(tenantId);
   }
 }

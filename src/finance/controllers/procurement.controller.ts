@@ -11,14 +11,14 @@ export class ProcurementController {
 
   @Get()
   async getPurchaseOrders(@Req() req: any, @Query('status') status?: string) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.vendorsService.findAllPOs(tenantId, status);
   }
 
   @Post()
   @Roles('finance', 'operations')
   async createPurchaseOrder(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.vendorsService.createPO(data, tenantId, actor);
   }
@@ -26,7 +26,7 @@ export class ProcurementController {
   @Patch(':id')
   @Roles('finance', 'operations')
   async updatePurchaseOrder(@Param('id') id: string, @Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.vendorsService.updatePO(+id, data, tenantId, actor);
   }
@@ -34,7 +34,7 @@ export class ProcurementController {
   @Post(':id/approve')
   @Roles('finance')
   async approvePurchaseOrder(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.vendorsService.approvePO(+id, tenantId, actor);
   }
@@ -42,7 +42,7 @@ export class ProcurementController {
   @Post(':id/reject')
   @Roles('finance')
   async rejectPurchaseOrder(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.vendorsService.rejectPO(+id, tenantId, actor);
   }

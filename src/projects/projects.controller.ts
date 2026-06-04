@@ -62,6 +62,27 @@ export class ProjectsController {
     return this.projectsService.updateTask(+taskId, data, tenantId, actor);
   }
 
+  @Get('tasks')
+  async getAllTasks(@Req() req: any) {
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
+    return this.projectsService.getAllTasks(tenantId);
+  }
+
+  @Post('tasks')
+  async createGlobalTask(@Body() data: any, @Req() req: any) {
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
+    const actor = req.user.email || 'system';
+    return this.projectsService.createTaskGlobal(data, tenantId, actor);
+  }
+
+  @Delete('tasks/:taskId')
+  async deleteTask(@Param('taskId') taskId: string, @Req() req: any) {
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
+    const actor = req.user.email || 'system';
+    await this.projectsService.deleteTaskGlobal(+taskId, tenantId, actor);
+    return { success: true };
+  }
+
   // Milestones
   @Get('projects/:id/milestones')
   async getProjectMilestones(@Param('id') id: string, @Req() req: any) {

@@ -11,20 +11,20 @@ export class VendorsController {
 
   @Get()
   async getVendors(@Req() req: any, @Query('search') search?: string) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.vendorsService.findAllVendors(tenantId, search);
   }
 
   @Get(':id')
   async getVendor(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.vendorsService.findVendorById(+id, tenantId);
   }
 
   @Post()
   @Roles('finance', 'operations')
   async createVendor(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.vendorsService.createVendor(data, tenantId, actor);
   }
@@ -32,7 +32,7 @@ export class VendorsController {
   @Patch(':id')
   @Roles('finance', 'operations')
   async updateVendor(@Param('id') id: string, @Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.vendorsService.updateVendor(+id, data, tenantId, actor);
   }
@@ -40,7 +40,7 @@ export class VendorsController {
   @Delete(':id')
   @Roles('finance', 'operations')
   async deleteVendor(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     await this.vendorsService.removeVendor(+id, tenantId, actor);
     return { success: true };

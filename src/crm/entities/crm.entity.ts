@@ -228,6 +228,15 @@ export class Contract {
   @Column({ unique: true })
   contractNumber: string;
 
+  @Column({ type: 'varchar', nullable: true })
+  title: string;
+
+  @Column({ type: 'varchar', nullable: true })
+  client: string;
+
+  @Column({ type: 'text', nullable: true })
+  slaTerms: string;
+
   @Column({ type: 'float' })
   value: number;
 

@@ -1,0 +1,2367 @@
+[
+  {
+    "table_name": "ai_actions",
+    "column_name": "actionName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "conversation_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "payload",
+    "data_type": "text"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "result",
+    "data_type": "text"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_actions",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "role",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "systemPrompt",
+    "data_type": "text"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "ai_agents",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "agent_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "title",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "ai_conversations",
+    "column_name": "user_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "entityId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "entityType",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "recommendationText",
+    "data_type": "text"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "score",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "ai_recommendations",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "checkIn",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "checkOut",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "date",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "employee_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "attendance",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "action",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "actor",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "module",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "new_value",
+    "data_type": "text"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "previous_value",
+    "data_type": "text"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "audit_logs",
+    "column_name": "timestamp",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "allocated",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "category",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "period",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "spent",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "budgets",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "comments",
+    "column_name": "content",
+    "data_type": "text"
+  },
+  {
+    "table_name": "comments",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "comments",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "comments",
+    "column_name": "taskId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "comments",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "comments",
+    "column_name": "userId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "address",
+    "data_type": "text"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "industry",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "phone",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "companies",
+    "column_name": "website",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "companyId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "email",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "firstName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "lastName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "phone",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "title",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contacts",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "contractNumber",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "endDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "quoteId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "startDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "contracts",
+    "column_name": "value",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "conversations",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "conversations",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "conversations",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "conversations",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "conversations",
+    "column_name": "type",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "conversations",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "departments",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "departments",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "departments",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "departments",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "departments",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "department_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "employeeNumber",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "hireDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "jobTitle",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "salary",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "employees",
+    "column_name": "user_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "expense_categories",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "expense_categories",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expense_categories",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "category",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "createdBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "date",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "notes",
+    "data_type": "text"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "receiptUrl",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "rejectionReason",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "submitter",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "expenses",
+    "column_name": "updatedBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "actionType",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "actor",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "entityId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "entityType",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "newValue",
+    "data_type": "text"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "oldValue",
+    "data_type": "text"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "finance_audit_logs",
+    "column_name": "timestamp",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "coord_dimension",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "f_geography_column",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "f_table_catalog",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "f_table_name",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "f_table_schema",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "srid",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "geography_columns",
+    "column_name": "type",
+    "data_type": "text"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "coord_dimension",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "f_geometry_column",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "f_table_catalog",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "f_table_name",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "f_table_schema",
+    "data_type": "name"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "srid",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "geometry_columns",
+    "column_name": "type",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoice_items",
+    "column_name": "description",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoice_items",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "invoice_items",
+    "column_name": "invoiceId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "invoice_items",
+    "column_name": "qty",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "invoice_items",
+    "column_name": "unitPrice",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "address",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "client",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "createdBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "currency",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "discount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "dueDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "email",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "invoiceNumber",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "issueDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "notes",
+    "data_type": "text"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "paid",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "phone",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "project",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "taxRate",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "invoices",
+    "column_name": "updatedBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "assignedToUserId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "companyName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "email",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "firstName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "lastName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "phone",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "source",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "leads",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "approved_by_user_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "employee_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "endDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "leaveType",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "reason",
+    "data_type": "text"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "startDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "leave_requests",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "content",
+    "data_type": "text"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "conversation_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "sender_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "messages",
+    "column_name": "type",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "completed",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "dueDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "projectId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "milestones",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "content",
+    "data_type": "text"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "isRead",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "title",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "type",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "notifications",
+    "column_name": "user_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "assignedToUserId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "closeDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "companyId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "contactId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "pipelineStageId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "stage",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "opportunities",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "client",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "createdBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "gateway",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "invoiceId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "time",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "transactionId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "type",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "payment_transactions",
+    "column_name": "updatedBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "employee_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "feedback",
+    "data_type": "text"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "period",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "rating",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "reviewDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "reviewer_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "performance_reviews",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "blk_read_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "blk_write_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "calls",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "dbid",
+    "data_type": "oid"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_emission_count",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_emission_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_functions",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_generation_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_inlining_count",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_inlining_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_optimization_count",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "jit_optimization_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "local_blks_dirtied",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "local_blks_hit",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "local_blks_read",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "local_blks_written",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "max_exec_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "max_plan_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "mean_exec_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "mean_plan_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "min_exec_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "min_plan_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "plans",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "query",
+    "data_type": "text"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "queryid",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "rows",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "shared_blks_dirtied",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "shared_blks_hit",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "shared_blks_read",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "shared_blks_written",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "stddev_exec_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "stddev_plan_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "temp_blk_read_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "temp_blk_write_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "temp_blks_read",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "temp_blks_written",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "toplevel",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "total_exec_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "total_plan_time",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "userid",
+    "data_type": "oid"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "wal_bytes",
+    "data_type": "numeric"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "wal_fpi",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements",
+    "column_name": "wal_records",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements_info",
+    "column_name": "dealloc",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "pg_stat_statements_info",
+    "column_name": "stats_reset",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "pipelineId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "position",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "probability",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "pipeline_stages",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "pipelines",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "pipelines",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "pipelines",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "pipelines",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "pipelines",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "project_members",
+    "column_name": "project_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "project_members",
+    "column_name": "user_id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "description",
+    "data_type": "text"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "endDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "startDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "projects",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "createdBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "deliveryDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "issueDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "items",
+    "data_type": "text"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "poNumber",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "updatedBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "vendorId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "purchase_orders",
+    "column_name": "vendorName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "opportunityId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "quoteNumber",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "quotes",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "blocksize_x",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "blocksize_y",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "extent",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "nodata_values",
+    "data_type": "ARRAY"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "num_bands",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "out_db",
+    "data_type": "ARRAY"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "pixel_types",
+    "data_type": "ARRAY"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "r_raster_column",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "r_table_catalog",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "r_table_name",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "r_table_schema",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "regular_blocking",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "same_alignment",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "scale_x",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "scale_y",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "spatial_index",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "raster_columns",
+    "column_name": "srid",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "o_raster_column",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "o_table_catalog",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "o_table_name",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "o_table_schema",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "overview_factor",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "r_raster_column",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "r_table_catalog",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "r_table_name",
+    "data_type": "name"
+  },
+  {
+    "table_name": "raster_overviews",
+    "column_name": "r_table_schema",
+    "data_type": "name"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "amount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "gateway",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "settlementCycleDays",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "settlementDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "settlements",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "spatial_ref_sys",
+    "column_name": "auth_name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "spatial_ref_sys",
+    "column_name": "auth_srid",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "spatial_ref_sys",
+    "column_name": "proj4text",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "spatial_ref_sys",
+    "column_name": "srid",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "spatial_ref_sys",
+    "column_name": "srtext",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "billingCycle",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "currency",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "features",
+    "data_type": "text"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "planId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "price",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "subscription_plans",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "clientCompany",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "createdBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "endDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "planId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "seatCount",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "startDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "updatedBy",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "usageCurrent",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "subscriptions",
+    "column_name": "usageLimit",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "assignedToUserId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "description",
+    "data_type": "text"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "dueDate",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "milestoneId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "priority",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "projectId",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "tasks",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "period",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "taxPaid",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "taxRate",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "taxableAmount",
+    "data_type": "double precision"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tax_records",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "client",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "message",
+    "data_type": "text"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "priority",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "status",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "subject",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "tenantId",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "tickets",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "users",
+    "column_name": "avatar",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "clientCompany",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "department",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "email",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "users",
+    "column_name": "mfaSecret",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "passwordHash",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "role",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "roleLabel",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "users",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "address",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "category",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "contactName",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "createdAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "deletedAt",
+    "data_type": "timestamp without time zone"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "email",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "id",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "name",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "phone",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "tenantId",
+    "data_type": "character varying"
+  },
+  {
+    "table_name": "vendors",
+    "column_name": "updatedAt",
+    "data_type": "timestamp without time zone"
+  }
+]

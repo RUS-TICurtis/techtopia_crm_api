@@ -31,7 +31,7 @@ export class AuthService implements OnModuleInit {
         roleLabel: 'Super Admin',
         avatar: 'CT',
         department: 'Executive',
-        tenantId: 'tenant_techtopia',
+        tenantId: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
         password: 'password123',
       },
       {
@@ -41,7 +41,7 @@ export class AuthService implements OnModuleInit {
         roleLabel: 'Sales Executive',
         avatar: 'SJ',
         department: 'Sales',
-        tenantId: 'tenant_techtopia',
+        tenantId: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
         password: 'password123',
       },
       {
@@ -51,7 +51,7 @@ export class AuthService implements OnModuleInit {
         roleLabel: 'Support Agent',
         avatar: 'SP',
         department: 'Support',
-        tenantId: 'tenant_techtopia',
+        tenantId: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
         password: 'password123',
       },
       {
@@ -61,7 +61,7 @@ export class AuthService implements OnModuleInit {
         roleLabel: 'Finance Manager',
         avatar: 'FM',
         department: 'Finance',
-        tenantId: 'tenant_techtopia',
+        tenantId: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
         password: 'password123',
       },
       {
@@ -71,7 +71,7 @@ export class AuthService implements OnModuleInit {
         roleLabel: 'Project Manager',
         avatar: 'PM',
         department: 'Delivery',
-        tenantId: 'tenant_techtopia',
+        tenantId: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
         password: 'password123',
       },
       {
@@ -81,7 +81,7 @@ export class AuthService implements OnModuleInit {
         roleLabel: 'Client',
         avatar: 'AC',
         department: 'External',
-        tenantId: 'tenant_techtopia',
+        tenantId: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
         clientCompany: 'ACME Corp',
         password: 'password123',
       },
@@ -186,6 +186,10 @@ export class AuthService implements OnModuleInit {
         department: user.department,
         tenantId: user.tenantId,
         clientCompany: user.clientCompany,
+        phone: user.phone,
+        location: user.location,
+        username: user.username,
+        avatarUrl: user.avatarUrl,
       },
     };
   }
@@ -201,5 +205,37 @@ export class AuthService implements OnModuleInit {
     } catch {
       throw new UnauthorizedException('Invalid refresh token');
     }
+  }
+
+  async updateProfile(userId: number, data: any) {
+    const user = await this.userRepository.findOne({ where: { id: userId } });
+    if (!user) {
+      throw new UnauthorizedException('User not found');
+    }
+
+    if (data.name !== undefined) user.name = data.name;
+    if (data.email !== undefined) user.email = data.email;
+    if (data.phone !== undefined) user.phone = data.phone;
+    if (data.location !== undefined) user.location = data.location;
+    if (data.username !== undefined) user.username = data.username;
+    if (data.avatarUrl !== undefined) user.avatarUrl = data.avatarUrl;
+
+    await this.userRepository.save(user);
+
+    return {
+      id: user.id.toString(),
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      roleLabel: user.roleLabel,
+      avatar: user.avatar,
+      department: user.department,
+      tenantId: user.tenantId,
+      clientCompany: user.clientCompany,
+      phone: user.phone,
+      location: user.location,
+      username: user.username,
+      avatarUrl: user.avatarUrl,
+    };
   }
 }

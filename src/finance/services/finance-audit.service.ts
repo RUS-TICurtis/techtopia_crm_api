@@ -17,7 +17,7 @@ export class FinanceAuditService {
     entityId: string,
     oldValue: any,
     newValue: any,
-    tenantId: string = 'tenant_techtopia',
+    tenantId: string = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
   ): Promise<FinanceAuditLog> {
     const logEntry = this.auditRepository.create({
       actor,

@@ -11,7 +11,7 @@ export class ExpensesController {
 
   @Get('categories')
   async getCategories(@Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.expensesService.getCategories(tenantId);
   }
 
@@ -21,14 +21,14 @@ export class ExpensesController {
     @Query('category') category?: string,
     @Query('status') status?: string,
   ) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.expensesService.findAll(tenantId, category, status);
   }
 
   @Post()
   @Roles('sales', 'support', 'developer', 'hr', 'finance', 'project_manager', 'operations')
   async submitExpense(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.expensesService.submit(data, tenantId, actor);
   }
@@ -36,7 +36,7 @@ export class ExpensesController {
   @Patch(':id')
   @Roles('finance', 'operations')
   async updateExpense(@Param('id') id: string, @Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.expensesService.update(+id, data, tenantId, actor);
   }
@@ -44,7 +44,7 @@ export class ExpensesController {
   @Post(':id/approve')
   @Roles('finance')
   async approveExpense(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.expensesService.approve(+id, tenantId, actor);
   }
@@ -52,7 +52,7 @@ export class ExpensesController {
   @Post(':id/reject')
   @Roles('finance')
   async rejectExpense(@Param('id') id: string, @Body('reason') reason: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.expensesService.reject(+id, reason, tenantId, actor);
   }
@@ -60,7 +60,7 @@ export class ExpensesController {
   @Delete(':id')
   @Roles('finance', 'operations')
   async deleteExpense(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     await this.expensesService.remove(+id, tenantId, actor);
     return { success: true };

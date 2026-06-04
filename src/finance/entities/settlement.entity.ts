@@ -20,7 +20,7 @@ export class Settlement {
   @Column({ type: 'integer', default: 1 })
   settlementCycleDays: number;
 
-  @Column({ type: 'varchar', default: 'tenant_techtopia' })
+  @Column({ type: 'varchar', default: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11' })
   tenantId: string;
 
   @CreateDateColumn()

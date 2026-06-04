@@ -34,4 +34,16 @@ export class User {
 
   @Column({ type: 'varchar', nullable: true })
   mfaSecret: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  phone: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  location: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  username: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  avatarUrl: string | null;
 }

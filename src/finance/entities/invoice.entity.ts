@@ -50,7 +50,7 @@ export class Invoice {
   @Column('float', { default: 0 })
   discount: number;
 
-  @Column({ type: 'varchar', default: 'tenant_techtopia' })
+  @Column({ type: 'varchar', default: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11' })
   tenantId: string;
 
   @OneToMany(() => InvoiceItem, (item) => item.invoice, { cascade: true, eager: true })

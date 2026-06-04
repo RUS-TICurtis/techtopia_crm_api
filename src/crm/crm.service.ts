@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Lead, Contact, Company, Opportunity, Pipeline } from './entities/crm.entity';
+import { Lead, Contact, Company, Opportunity, Pipeline, Contract } from './entities/crm.entity';
 import { FinanceAuditService } from '../finance/services/finance-audit.service';
 
 @Injectable()
@@ -17,6 +17,8 @@ export class CrmService {
     private readonly opportunityRepository: Repository<Opportunity>,
     @InjectRepository(Pipeline)
     private readonly pipelineRepository: Repository<Pipeline>,
+    @InjectRepository(Contract)
+    private readonly contractRepository: Repository<Contract>,
     private readonly auditService: FinanceAuditService,
   ) {}
 
@@ -140,5 +142,40 @@ export class CrmService {
     const saved = await this.opportunityRepository.save(opp) as unknown as Opportunity;
     await this.auditService.log(actor, 'OPPORTUNITY_UPDATED', 'Opportunity', id.toString(), old, saved, tenantId);
     return saved;
+  }
+
+  // ── Contracts ──────────────────────────────────────────────────────────────
+  async getContracts(tenantId: string): Promise<Contract[]> {
+    return this.contractRepository.find({ where: { tenantId }, order: { createdAt: 'DESC' } });
+  }
+
+  async createContract(data: any, tenantId: string, actor: string): Promise<Contract> {
+    // Generate contract number if not provided
+    if (!data.contractNumber) {
+      const count = await this.contractRepository.count({ where: { tenantId } });
+      data.contractNumber = `CTR-2026-${String(count + 1).padStart(3, '0')}`;
+    }
+    const contract = this.contractRepository.create({ ...data, tenantId }) as unknown as Contract;
+    const saved = await this.contractRepository.save(contract) as unknown as Contract;
+    await this.auditService.log(actor, 'CONTRACT_CREATED', 'Contract', saved.id.toString(), null, saved, tenantId);
+    return saved;
+  }
+
+  async updateContract(id: number, data: any, tenantId: string, actor: string): Promise<Contract> {
+    const contract = await this.contractRepository.findOne({ where: { id, tenantId } });
+    if (!contract) throw new NotFoundException(`Contract ${id} not found`);
+    const old = JSON.parse(JSON.stringify(contract));
+    Object.assign(contract, data);
+    const saved = await this.contractRepository.save(contract) as unknown as Contract;
+    await this.auditService.log(actor, 'CONTRACT_UPDATED', 'Contract', id.toString(), old, saved, tenantId);
+    return saved;
+  }
+
+  async deleteContract(id: number, tenantId: string, actor: string): Promise<void> {
+    const contract = await this.contractRepository.findOne({ where: { id, tenantId } });
+    if (!contract) throw new NotFoundException(`Contract ${id} not found`);
+    const old = JSON.parse(JSON.stringify(contract));
+    await this.contractRepository.remove(contract);
+    await this.auditService.log(actor, 'CONTRACT_DELETED', 'Contract', id.toString(), old, null, tenantId);
   }
 }

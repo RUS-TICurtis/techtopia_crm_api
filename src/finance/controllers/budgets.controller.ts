@@ -11,20 +11,20 @@ export class BudgetsController {
 
   @Get()
   async getBudgets(@Req() req: any, @Query('period') period?: string) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.budgetsService.findAll(tenantId, period);
   }
 
   @Get(':id')
   async getBudget(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     return this.budgetsService.findOne(+id, tenantId);
   }
 
   @Post()
   @Roles('finance', 'operations')
   async createBudget(@Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.budgetsService.create(data, tenantId, actor);
   }
@@ -32,7 +32,7 @@ export class BudgetsController {
   @Patch(':id')
   @Roles('finance', 'operations')
   async updateBudget(@Param('id') id: string, @Body() data: any, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     return this.budgetsService.update(+id, data, tenantId, actor);
   }
@@ -40,7 +40,7 @@ export class BudgetsController {
   @Delete(':id')
   @Roles('finance')
   async deleteBudget(@Param('id') id: string, @Req() req: any) {
-    const tenantId = req.user.tenantId || 'tenant_techtopia';
+    const tenantId = req.user.tenantId || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
     const actor = req.user.email || 'system';
     await this.budgetsService.remove(+id, tenantId, actor);
     return { success: true };

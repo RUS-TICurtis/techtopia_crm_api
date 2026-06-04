@@ -7,3 +7,5 @@ async function bootstrap() {
   await app.listen(process.env.PORT ?? 1428);
 }
 bootstrap();
+// Trigger reload after DB migrations
+

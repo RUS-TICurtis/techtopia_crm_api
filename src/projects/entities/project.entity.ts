@@ -24,6 +24,24 @@ export class Project {
   @Column({ type: 'varchar', nullable: true })
   endDate: string | null;
 
+  @Column({ type: 'integer', default: 0 })
+  progress: number;
+
+  @Column({ type: 'varchar', default: 'On Track' })
+  health: string; // 'On Track', 'At Risk', 'Off Track', 'Completed'
+
+  @Column({ type: 'float', default: 0 })
+  budget: number;
+
+  @Column({ type: 'float', default: 0 })
+  spent: number;
+
+  @Column({ type: 'varchar', nullable: true })
+  owner: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  company: string | null;
+
   @CreateDateColumn()
   createdAt: Date;
 
@@ -103,6 +121,12 @@ export class Task {
 
   @Column({ type: 'integer', nullable: true })
   assignedToUserId: number | null;
+
+  @Column({ type: 'integer', nullable: true })
+  contactId: number | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  contactName: string | null;
 
   @CreateDateColumn()
   createdAt: Date;

@@ -23,7 +23,7 @@ export class SubscriptionPlan {
   @Column({ type: 'text', nullable: true })
   features: string; // JSON serialized string array
 
-  @Column({ type: 'varchar', default: 'tenant_techtopia' })
+  @Column({ type: 'varchar', default: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11' })
   tenantId: string;
 }
 
@@ -56,7 +56,7 @@ export class Subscription {
   @Column({ nullable: true })
   endDate: string;
 
-  @Column({ type: 'varchar', default: 'tenant_techtopia' })
+  @Column({ type: 'varchar', default: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11' })
   tenantId: string;
 
   @CreateDateColumn()
